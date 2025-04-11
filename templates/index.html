@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% block title %} Home {% endblock title %}
+{% block body %}
+
+<div class="container">
+<h2>Submit book</h2>
+<!------------- book form------------------->
+<form action="/AddBook" method="POST">
+  {% csrf_token %}
+
+    <div class="form-group"  >
+      <label for="exampleInputEmail1">Title</label>
+      <input type="text" class="form-control" name="title" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    </div>
+
+    <div class="form-group"  >
+      <label for="exampleInputEmail1">Author</label>
+      <input type="text" class="form-control" name="author" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    </div>
+
+    <div class="form-group"  >
+      <label for="exampleInputEmail1">Genre</label>
+      <input type="text" class="form-control" name="genre" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    </div>
+
+    <div class="form-group"  >
+      <label for="exampleInputEmail1">Published Year</label>
+      <input type="text" class="form-control" name="year" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+<!----------------------------------------->
+</div>
+
+
+<h2>Submit review</h2>
+<form action="/AddReview" method="POST">
+  {% csrf_token %}
+
+  {% csrf_token %}
+  <label>Username:</label>
+  <input type="text" name="username"><br>
+
+  <label>Comment:</label>
+  <textarea name="comment"></textarea><br>
+
+  <label>Book ID:</label>
+  <input type="number" name="bookid"><br>
+
+
+   
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+<!----------------------------------------->
+
+
+<h3>
+
+</h3>
+
+<form action="/login" method="POST">
+  {% csrf_token %}
+
+    <div class="form-group"  >
+      <label for="exampleInputEmail1">username</label>
+      <input type="text" class="form-control" name="username" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    </div>
+
+    <!-- <div class="form-group"  >
+      <label for="exampleInputEmail1">email</label>
+      <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    </div> -->
+
+    <div class="form-group"  >
+      <label for="exampleInputEmail1">password</label>
+      <input type="text" class="form-control" name="password" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    </div>
+
+   
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+
+<!---------------submit comment------------------------>
+
+
+
+<!--------------------------------------------------->
+
+{% endblock body %}
