@@ -109,9 +109,10 @@ def getReviews(request, id):
 @csrf_exempt
 def register(request):
     if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        email = request.POST.get('email')
+        data=json.loads(request.body)
+        username = data.get('username')
+        password = data.get('password')
+        email = data.get('email')
 
         if User.objects.filter(username=username).exists():
             return HttpResponse('Username already taken.')
