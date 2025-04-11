@@ -140,4 +140,17 @@ def login(request):
         else:
             return HttpResponse("Invalid username or password.")
 
+def editReview(request, id):
+    review = get_object_or_404(Review, id=id)
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, instance=review)
+        if form.is_valid():
+            form.save()
+            return redirect('some_view_name')  # replace with the name of the view you want to redirect to
+    else:
+        form = ReviewForm(instance=review)
+
+    return render(request, 'edit_review.html', {'form': form})
+
 # Create your views here.

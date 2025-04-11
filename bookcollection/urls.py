@@ -18,5 +18,6 @@ urlpatterns = [
     path('login', views.login,name="login"),
 
     path('AddReview/<int:id>', views.addReviews,name="addReviews"),
+    path('editReview/<int:id>', views.addReviews,name="addReviews"),
 
 ]
